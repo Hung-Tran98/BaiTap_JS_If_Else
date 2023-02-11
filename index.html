@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-danger">BÀI 1 : QUẢN LÝ SINH VIÊN</h2>
+        <form class="w-50 m-auto py-5">
+            <div class="form-group">
+                <label for="" class="font-weight-bold text-primary">Điểm môn thứ 1 :</label>
+                <input type="number" class="form-control" id="diemMon1">
+            </div>
+            <div class="form-group">
+                <label for="" class="font-weight-bold text-primary">Điểm môn thứ 2 :</label>
+                <input type="number" class="form-control" id="diemMon2">
+            </div>
+            <div class="form-group">
+                <label for="" class="font-weight-bold text-primary">Điểm môn thứ 3 :</label>
+                <input type="number" class="form-control" id="diemMon3">
+            </div>
+            <div class="form-group">
+                <label for="" class="font-weight-bold text-primary">Điểm chuẩn :</label>
+                <input type="number" class="form-control" id="diemChuan">
+            </div>
+            <select class="form-control" id="chonKhuVuc">
+                <option value="x">Chọn khu vực</option>
+                <option value="x">X</option>
+                <option value="a">Khu vực A</option>
+                <option value="b">Khu vực B</option>
+                <option value="c">Khu vực C</option>
+            </select>
+            <select class="form-control my-2" id="chonDoiTuong">
+                <option value="0">Chọn đối tượng</option>
+                <option value="0">0</option>
+                <option value="1">Đối tượng 1</option>
+                <option value="2">Đối tượng 2</option>
+                <option value="3">Đối tượng 3</option>
+            </select>
+
+            <button type="button" class="btn btn-primary" id="btnKetQuaThiSinh">Kết quả</button>
+            <p class="alert alert-success my-2" id="txtKetQuaThiSinh">Kết quả : </p>
+        </form>
+
+
+
+        <h2 class="text-danger">BÀI 2 : TÍNH TIỀN ĐIỆN</h2>
+        <form class="w-50 m-auto py-5">
+            <div class="form-group">
+                <label for="" class="font-weight-bold text-primary">Họ và tên người sử dụng điện :</label>
+                <input type="text" class="form-control" id="hoTenNSD">
+            </div>
+            <div class="form-group">
+                <label for="" class="font-weight-bold text-primary">Số Kw sử dụng :</label>
+                <input type="number" class="form-control" id="soKw">
+            </div>
+            <button type="button" class="btn btn-primary" id="btnTinhTienDien">Tính</button>
+            <p class="alert alert-success my-2" id="txtTienDien">Kết quả : </p>
+        </form>
+
+        <h2 class="text-danger">BÀI 3 : TÍNH THUẾ THU NHẬP CÁ NHÂN</h2>
+        <form class="w-50 m-auto py-5">
+            <div class="form-group">
+                <label for="" class="font-weight-bold text-primary">Họ và tên:</label>
+                <input type="text" class="form-control" id="hoTenCaNhan">
+            </div>
+            <div class="form-group">
+                <label for="" class="font-weight-bold text-primary">Tổng thu nhập năm :</label>
+                <input type="number" class="form-control" id="tongThuNhapNam">
+            </div>
+            <div class="form-group">
+                <label for="" class="font-weight-bold text-primary">Số người phụ thuộc :</label>
+                <input type="number" class="form-control" id="soNguoiPhuThuoc">
+            </div>
+            <button type="button" class="btn btn-primary" id="btnTinhThueCaNhan">Tính</button>
+            <p class="alert alert-success my-2" id="txtTongTienThueCaNhan">Kết quả : </p>
+        </form>
+
+        <h2 class="text-danger">BÀI 4 : TÍNH TIỀN CÁP</h2>
+        <form class="w-50 m-auto py-5">
+            <div class="form-group">
+                <label for="" class="font-weight-bold text-primary">Nhập mã khách hàng :</label>
+                <input type="text" class="form-control" id="maKH">
+            </div>
+            <div class="form-group">
+                <label for="" class="font-weight-bold text-primary">Số kênh cao cấp :</label>
+                <input type="number" class="form-control" id="soKenhCaoCap">
+            </div>
+            <div class="form-group" id="formSoKetNoi" >
+                <label for="" class="font-weight-bold text-primary">Số kết nối :</label>
+                <input type="number" class="form-control" id="soKetNoi">
+            </div>
+            <select class="form-control my-2" id="chonLoaiKH" onchange="anHienInput()">
+                <option value="0">Chọn loại khách hàng</option>
+                <option value="1">Nhà dân</option>
+                <option value="2">Doanh nghiệp</option>
+            </select>
+            <button type="button" class="btn btn-primary" id="btnTinhTienCap">Tính</button>
+            <p class="alert alert-success my-2" id="txtTongTienCap">Kết quả : </p>
+        </form>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <!-- <script src="./js/Bai_Tap_1.js"></script> -->
+    <!-- <script src="./js/Bai_Tap_2.js"></script> -->
+    <!-- <script src="./js/Bai_Tap_3.js"></script> -->
+    <script src="./js/Bai_Tap_4.js"></script>
+</body>
+
+</html>
