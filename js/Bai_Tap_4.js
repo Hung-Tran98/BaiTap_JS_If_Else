@@ -25,16 +25,19 @@
  *
  * !Khối 3 : Output
  *          + tongTienCap
- */
+ */ 
 window.onload =  function(){
     document.getElementById("formSoKetNoi").classList = "d-none";
 }
 function anHienInput() {
   var eve = document.getElementById("chonLoaiKH").value;
-    if (eve == 1) {
-    document.getElementById("formSoKetNoi").classList = "d-none";
-    } else if(eve == 2) {
-    document.getElementById("formSoKetNoi").classList = "d-block";
+    if (eve == 0) {
+    document.getElementById("formSoKetNoi").classList = ('d-none');
+    } else if(eve == 1) {
+    document.getElementById("formSoKetNoi").classList = ('d-none');
+  }else if(eve == 2){
+    document.getElementById("formSoKetNoi").classList.add('d-block');
+
   }
 }
 
@@ -51,7 +54,7 @@ function tinhTienCap() {
   }else if(chonLoaiKH == 2 && soKetNoi>10){
     tongTienCap = 15 + 75 + 50 * soKenhCaoCap + 5 * (soKetNoi - 10);
   }else if(soKetNoi<=0){
-    alert("Xin bạn hãy nhập điểm chuẩn !")
+    alert("Xin bạn hãy nhập số kết nối !")
   }
   document.getElementById("txtTongTienCap").innerHTML =
     "Mã KH : " + maKH + " . Tiền cáp là : $" + tongTienCap.toFixed(2);
