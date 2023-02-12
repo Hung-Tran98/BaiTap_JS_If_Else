@@ -53,7 +53,7 @@ function tinhTienDien() {
     }
     if(soKw<=0){
         tongTienDien = 0;
-        alert("Số tiền không hợp lệ !")
+        alert("Số KW không hợp lệ !")
     }
     document.getElementById("txtTienDien").innerHTML = "Họ tên : " + hoTenNSD + " . Số tiền phải trả : " + tongTienDien.toLocaleString() + " VND";
 }

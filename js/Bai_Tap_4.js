@@ -45,15 +45,18 @@ var tongTienCap = 0;
 function tinhTienCap() {
   var soKenhCaoCap = Number(document.getElementById("soKenhCaoCap").value);
   var soKetNoi = Number(document.getElementById("soKetNoi").value);
-  var maKH = Number(document.getElementById("maKH").value);
+  var maKH = document.getElementById("maKH").value;
   var chonLoaiKH = Number(document.getElementById("chonLoaiKH").value);
-  if (chonLoaiKH == 1) {
+  if(chonLoaiKH == 0){
+    alert("Xin hãy chọn loại khách hàng !");
+  }
+  else if (chonLoaiKH == 1) {
     tongTienCap = 4.5 + 20.5 + 7.5 * soKenhCaoCap;
   } else if (chonLoaiKH == 2 && soKetNoi <= 10 && soKetNoi>0) {
     tongTienCap = 15 + 75 + 50 * soKenhCaoCap;
   }else if(chonLoaiKH == 2 && soKetNoi>10){
     tongTienCap = 15 + 75 + 50 * soKenhCaoCap + 5 * (soKetNoi - 10);
-  }else if(soKetNoi<=0){
+  }else if(soKetNoi<=0 && chonLoaiKH == 2){
     alert("Xin bạn hãy nhập số kết nối !")
   }
   document.getElementById("txtTongTienCap").innerHTML =
