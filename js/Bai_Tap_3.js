@@ -59,8 +59,11 @@ function tinhTienThueCaNhan() {
     var soNguoiPhuThuoc = Number(document.getElementById("soNguoiPhuThuoc").value);
 
     thuNhapChiuThue = tongThuNhapNam -4e+6 -soNguoiPhuThuoc *16e+5
-    
-    if(thuNhapChiuThue<=60e+6){
+    if(tongThuNhapNam<6e+6){
+        thuePhaiTra = 0;
+        alert("Nhập sai số tiền(số tiền lớn hơn hoặc bằng 6 triệu) !");
+    }
+    else if(thuNhapChiuThue<=60e+6){
 
         thuePhaiTra = thuNhapChiuThue * 0.05;
 

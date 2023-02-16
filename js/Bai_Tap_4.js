@@ -36,7 +36,7 @@ function anHienInput() {
     } else if(eve == 1) {
     document.getElementById("formSoKetNoi").classList = ('d-none');
   }else if(eve == 2){
-    document.getElementById("formSoKetNoi").classList.add('d-block');
+    document.getElementById("formSoKetNoi").classList.toggle('d-none');
 
   }
 }
@@ -60,7 +60,8 @@ function tinhTienCap() {
     alert("Xin bạn hãy nhập số kết nối !")
   }
   document.getElementById("txtTongTienCap").innerHTML =
-    "Mã KH : " + maKH + " . Tiền cáp là : $" + tongTienCap.toFixed(2);
+    "Mã khách hàng : " + maKH + " . Tiền cáp là : " + tongTienCap.toLocaleString("en-US",{style: "currency",
+    currency: "USD",});
 }
 
 document.getElementById("btnTinhTienCap").onclick = tinhTienCap;
